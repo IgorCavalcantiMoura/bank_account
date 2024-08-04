@@ -220,6 +220,13 @@ export function main() {
       case 7:
         console.log(colors.fg.whitestrong, "\n\nDepósito\n\n", colors.reset);
 
+        console.log("Digite o numero da conta: ");
+        numero = readlinesync.questionInt("");
+
+        console.log("\n Digite o valor do Deposito (R$): ");
+        valor = readlinesync.questionFloat("");
+
+        contas.depositar(numero, valor);
         keyPress();
         break;
 
@@ -230,6 +237,15 @@ export function main() {
           colors.reset
         );
 
+        console.log("Digite o numero da conta de origem: ");
+        numero = readlinesync.questionInt("");
+
+        console.log("Digite o número da conta de Destino: ");
+        (numeroDestino = readlinesync.questionInt("")),
+          console.log("\nDigite o valor do Deposito (R$): ");
+        valor = readlinesync.questionFloat("");
+
+        contas.transferir(numero, numeroDestino, valor);
         keyPress();
         break;
 
